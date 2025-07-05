@@ -5,13 +5,13 @@
   <img src="https://i.pinimg.com/originals/51/2f/c3/512fc362a4ca2663778db016c2b7f703.gif" alt="A beautiful preview image of the World Clock UI showing Mumbai" style="border-radius: 12px; width: 200%; max-width: 800px;">
   
 </div>
-*Time Burns Relentlessly*
+
 <br>
 
 <div align="center">
 
 # **WORLD CLOCK**
-
+**Time Burns Relentlessly**
 
 **[▶️ View the Live Project Here](https://devarshiadi.github.io/world-clock/)**
 
