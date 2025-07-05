@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Time Utility Suite - World Clock, Stopwatch & Timer by Aditya Devarshi</title>
+    <meta name="description" content="An elegant, modern, and functional time utility web application featuring a world clock with beautiful city imagery, a precise stopwatch, and a minimalist timer. Coded by Aditya Devarshi.">
+    <meta name="keywords" content="Aditya Devarshi, time, world clock, stopwatch, timer, javascript, frontend, developer, portfolio, UI, UX, web application">
+    <meta name="author" content="Aditya Devarshi">
+    <link rel="canonical" href="" /> <!-- Replace with your actual domain -->
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adity-ai.web.app"> <!-- Replace with your actual domain -->
+    <meta property="og:title" content="Time Utility Suite by Aditya Devarshi">
+    <meta property="og:description" content="Explore time with this beautiful and functional World Clock, Stopwatch, and Timer application.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1562979314-bee7453e911c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"> <!-- A preview image -->
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://adity-ai.web.app"> <!-- Replace with your actual domain -->
+    <meta name="twitter:title" content="Time Utility Suite by Aditya Devarshi">
+    <meta name="twitter:description" content="Explore time with this beautiful and functional World Clock, Stopwatch, and Timer application.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1562979314-bee7453e911c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"> <!-- A preview image -->
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="global-header">
+            <div class="logo">
+                <svg class="logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M2.33331 16.3333L11.6666 4.66666L15.1666 9.33332L25.6666 4.66666V11.6667L15.1666 23.3333L11.6666 18.6667L2.33331 23.3333V16.3333Z" stroke="#0D0D0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <nav class="mode-selector" role="tablist" aria-label="Time utilities">
+                <button role="tab" aria-selected="true" class="mode-btn active" data-view="world-clock">World Clock</button>
+                <button role="tab" aria-selected="false" class="mode-btn" data-view="stopwatch">Stopwatch</button>
+                <button role="tab" aria-selected="false" class="mode-btn" data-view="timer">Timer</button>
+            </nav>
+            <button class="settings-btn" aria-label="Show developer info">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="9" y="9" width="4" height="4" fill="#0D0D0D"/><rect x="9" y="15" width="4" height="4" fill="#0D0D0D"/><rect x="15" y="9" width="4" height="4" fill="#0D0D0D"/><rect x="15" y="15" width="4" height="4" fill="#0D0D0D"/>
+                </svg>
+            </button>
+        </header>
+
+        <div id="app-views">
+            <div id="world-clock-view" class="view active-view">
+                <main class="time-panel">
+                    <section class="main-clock-wrapper">
+                        <div class="time-labels"><span>hours</span><span>minutes</span><span>seconds</span></div>
+                        <time class="main-clock-display" datetime="">
+                            <div class="digit-container"><span id="h1">0</span></div><div class="digit-container"><span id="h2">0</span></div><div class="separator">:</div>
+                            <div class="digit-container"><span id="m1">0</span></div><div class="digit-container"><span id="m2">0</span></div><div class="separator">:</div>
+                            <div class="digit-container"><span id="s1">0</span></div><div class="digit-container"><span id="s2">0</span></div>
+                        </time>
+                    </section>
+                    <section class="timezone-selector-wrapper">
+                        <div class="timezone-selector" id="timezone-selector" role="toolbar"></div>
+                    </section>
+                </main>
+                <aside class="location-hero" id="location-hero">
+                    <div class="location-info">
+                        <h1 id="location-name">City, Country</h1>
+                        <p class="date" id="date-display">Day, Month DD</p>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- View: Stopwatch -->
+            <div id="stopwatch-view" class="view">
+                 <div class="stopwatch-display main-clock-display" aria-live="off">00:00<span class="ms">.00</span></div>
+                 <div class="stopwatch-controls-laps">
+                    <div class="stopwatch-controls">
+                        <button class="control-btn" id="stopwatch-reset">Reset</button>
+                        <button class="control-btn primary" id="stopwatch-start-stop">Start</button>
+                        <button class="control-btn" id="stopwatch-lap" disabled>Lap</button>
+                    </div>
+                    <div class="laps-list-container"><ul class="laps-list" id="laps-list"></ul></div>
+                 </div>
+            </div>
+
+            <!-- View: Timer (Simplified & Functional) -->
+            <div id="timer-view" class="view">
+                <div id="timer-setup-view">
+                    <div class="timer-inputs">
+                        <input type="number" id="timer-input-h" placeholder="00" min="0" max="99">
+                        <span class="timer-input-separator">:</span>
+                        <input type="number" id="timer-input-m" placeholder="00" min="0" max="59">
+                        <span class="timer-input-separator">:</span>
+                        <input type="number" id="timer-input-s" placeholder="00" min="0" max="59">
+                    </div>
+                    <div class="timer-input-labels">
+                        <span>hours</span>
+                        <span>minutes</span>
+                        <span>seconds</span>
+                    </div>
+                </div>
+                <div id="timer-display-view" class="hidden">
+                    <div id="timer-digital-display" class="timer-digital-display main-clock-display">
+                        00:00:00
+                    </div>
+                </div>
+                <div class="timer-controls">
+                    <button class="control-btn" id="timer-reset">Reset</button>
+                    <button class="control-btn primary" id="timer-start-pause">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Developer Info Modal -->
+    <div id="dev-modal-overlay" class="modal-overlay hidden">
+        <div id="dev-modal" class="modal-content" role="dialog" aria-modal="true" aria-labelledby="dev-modal-title">
+            <div class="modal-header">
+                <img id="dev-photo" src="" alt="Developer profile photo" class="dev-photo">
+                <div class="dev-info-text">
+                    <h2 id="dev-modal-title" class="dev-name"></h2>
+                    <p class="dev-title"></p>
+                </div>
+            </div>
+            <div class="social-links" id="social-links"></div>
+            <p class="dev-quote hidden" id="dev-quote"></p>
+            <button class="close-modal-btn" aria-label="Close modal">×</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
