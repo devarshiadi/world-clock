@@ -82,8 +82,9 @@ I thrive on challenges and am always exploring new ways to merge cutting-edge te
 
 <div align="center">
 
-| LinkedIn | GitHub | Instagram |
-| :---: | :---: | :---: |
-| [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aditya-devarshi/) | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/devarshiadi/) | [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/curseofwitcher/) |
+| LinkedIn | GitHub | Instagram | Medium |
+| :---: | :---: | :---: | :---: |
+| [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aditya-devarshi/) | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/devarshiadi/) | [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/curseofwitcher/) | [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@devarshia5/time-is-universal-burns-relentlessly-7f5ecfbc606f) |
 
 </div>
+
